@@ -3,7 +3,7 @@ My Lazybones templates
 
 Currently available template:
 
-[Groovy Lib Template](/templates/groovy-lib/README.md)
+[Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
 
 
 Package and install groovy lib template
