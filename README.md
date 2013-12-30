@@ -1,34 +1,62 @@
 My Lazybones templates
 ----------------------
 
-Currently available template:
+This repository hosts some project Templates (boilerplate setup) that can be used using Lazybones.
 
-[Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
+If you don't have lazybones installed, install that first :
+
+1. Install gvm
+
+    `curl -s get.gvmtool.net | bash`
+
+2. Install lazybones via gvm
+
+    `gvm install lazybones`
 
 
-Package and install groovy lib template
+## Usage
 
-    ./gradlew installTemplateGroovyLib
+1. Add following snippet to `~/.lazybones/config.groovy`
 
-To Publish
+        bintrayRepositories = [
+              "pledbrook/lazybones-templates",
+              "kdabir/templates"
+        ]
 
-    ./gradlew publishTemplateGroovyLib
+2. Do a `lazybones list` to see available templates
 
 
-Package and install all the templates locally with the command:
+#### Currently available template(s)
 
-    ./gradlew installAllTemplates
+* [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
 
-To Publish
 
-    ./gradlew publishAllTemplates
+## Installing via source
+
+Clone this Github repo and execute the following Gradle tasks based on what you want to do :
+
+
+* Package and install groovy lib template
+
+        ./gradlew installTemplateGroovyLib
+
+* To publish groovy lib template
+
+        ./gradlew publishTemplateGroovyLib
+
+* Package and install all the templates locally with the command:
+
+        ./gradlew installAllTemplates
+
+* To Publish all templates
+
+        ./gradlew publishAllTemplates
 
 
 ### To Create a New Template
 
-Create a new dir in `templates` dir. Populate it with template content.
+Create a new dir in `templates` dir. Populate it with template content and install it locally.
 
-
-You can find out more about creating templates on [the GitHub wiki][1].
+You can find out more about creating templates on lazybones [GitHub wiki][1].
 
 [1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide
