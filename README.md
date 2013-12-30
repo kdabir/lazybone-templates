@@ -29,6 +29,7 @@ If you don't have lazybones installed, install that first :
 #### Currently available template(s)
 
 * [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
+* [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
 
 
 ## Installing via source
@@ -36,13 +37,16 @@ If you don't have lazybones installed, install that first :
 Clone this Github repo and execute the following Gradle tasks based on what you want to do :
 
 
-* Package and install groovy lib template
+* Package and install individual template
 
         ./gradlew installTemplateGroovyLib
+        ./gradlew installTemplateSinatraHamlSassCoffee
 
-* To publish groovy lib template
+
+* To publish individual template
 
         ./gradlew publishTemplateGroovyLib
+        ./gradlew publishTemplateSinatraHamlSassCoffee
 
 * Package and install all the templates locally with the command:
 
@@ -55,7 +59,13 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 
 ### To Create a New Template
 
-Create a new dir in `templates` dir. Populate it with template content and install it locally.
+* Create a new dir in `templates` dir.
+* Populate it with template content and install it locally.
+* Add README.md
+* Add VERSION file
+* Test locally using `installTemplate<TemplateName>`
+* Publish using `publishTemplate<TemplateName>`
+
 
 You can find out more about creating templates on lazybones [GitHub wiki][1].
 
