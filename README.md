@@ -62,10 +62,10 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 
 ### To Create a New Template
 
-* Create a new dir in `templates` dir.
-* Populate it with template content and install it locally.
-* Add README.md
-* Add VERSION file
+* Create a new dir in `templates` dir
+* Populate it with template content
+* Add `README.md`
+* Add `VERSION file`
 * Install locally using `installTemplate<TemplateName>`
 * Test locally using `lazybones create template-name <version> sample-app`
 * Publish using `publishTemplate<TemplateName>`
