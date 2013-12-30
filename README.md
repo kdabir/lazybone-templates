@@ -3,16 +3,10 @@ My Lazybones templates
 
 This repository hosts some project Templates (boilerplate setup) that can be used using Lazybones.
 
-If you don't have lazybones installed, install that first :
+#### Currently available template(s)
 
-1. Install gvm
-
-    `curl -s get.gvmtool.net | bash`
-
-2. Install lazybones via gvm
-
-    `gvm install lazybones`
-
+* [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
+* [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
 
 ## Usage
 
@@ -26,31 +20,40 @@ If you don't have lazybones installed, install that first :
 2. Do a `lazybones list` to see available templates
 
 
-#### Currently available template(s)
+If you don't have lazybones installed, install that first :
 
-* [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
-* [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
+1. Install gvm
+
+    `curl -s get.gvmtool.net | bash`
+
+2. Install lazybones via gvm
+
+    `gvm install lazybones`
 
 
-## Installing via source
+## Installing Templates via source
 
 Clone this Github repo and execute the following Gradle tasks based on what you want to do :
-
 
 * Package and install individual template
 
         ./gradlew installTemplateGroovyLib
         ./gradlew installTemplateSinatraHamlSassCoffee
 
+* Package and install all the templates locally with the command:
+
+        ./gradlew installAllTemplates
+
+
+* Test the locally installed template using
+
+        lazybones create groovy-lib 0.1 sample-app
+        lazybones create sinatra-haml-sass-coffee 0.1 sample-app
 
 * To publish individual template
 
         ./gradlew publishTemplateGroovyLib
         ./gradlew publishTemplateSinatraHamlSassCoffee
-
-* Package and install all the templates locally with the command:
-
-        ./gradlew installAllTemplates
 
 * To Publish all templates
 
@@ -63,10 +66,11 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 * Populate it with template content and install it locally.
 * Add README.md
 * Add VERSION file
-* Test locally using `installTemplate<TemplateName>`
+* Install locally using `installTemplate<TemplateName>`
+* Test locally using `lazybones create template-name <version> sample-app`
 * Publish using `publishTemplate<TemplateName>`
 
 
-You can find out more about creating templates on lazybones [GitHub wiki][1].
+You can find out more about creating templates on [Lazybones' GitHub wiki][1].
 
 [1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide

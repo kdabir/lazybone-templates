@@ -55,7 +55,7 @@ console.log "hello coffee"
 
     #footer
       %footer
-        %a{href:"http://github.com/kdabir/lazybone-templates/template/sinatra-haml-sass-coffee"} Sinatra Template
+        %a{href:"https://github.com/kdabir/lazybone-templates/tree/master/templates/sinatra-haml-sass-coffee"} Sinatra Template
 
 @@index
 %p.desc

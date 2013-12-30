@@ -1,5 +1,5 @@
-Sinatra Minimal Template with Haml, Sass and CoffeeScript support
------------------------------------------------------------------
+Sinatra Template with Haml, Sass and CoffeeScript
+-------------------------------------------------
 
 - Install required deps using `bundle install`
 - To run the app `bundle exec shotgun app.rb`
