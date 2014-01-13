@@ -1,5 +1,8 @@
-@Grab(group="uk.co.cacoethes", module="groovy-handlebars-engine", version="0.2")
-@Grab(group="org.slf4j", module="slf4j-simple", version="1.6.1")
+@Grapes([
+    @Grab(group='org.slf4j', module='slf4j-api', version= '1.6.6'),
+    @Grab(group='org.slf4j', module='slf4j-simple', version='1.6.6'),
+    @Grab(group='uk.co.cacoethes', module='groovy-handlebars-engine', version='0.2')
+])
 import uk.co.cacoethes.handlebars.HandlebarsTemplateEngine
 
 def hbsEngine = new HandlebarsTemplateEngine()
