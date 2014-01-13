@@ -7,6 +7,8 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 * [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
 * [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
+* [Gaelyk Minimal](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk-minimal/README.md)
+* [Gaelyk](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk/README.md)
 
 ## Usage
 
@@ -19,16 +21,18 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 2. Do a `lazybones list` to see available templates
 
+3. Create an app from template (use `--with-git`)
+    `lazybones create <template-name> <version> <dir-name> --with-git`
 
-If you don't have lazybones installed, install that first :
-
-1. Install gvm
-
-    `curl -s get.gvmtool.net | bash`
-
-2. Install lazybones via gvm
-
-    `gvm install lazybones`
+> Note: If you don't have lazybones installed, install that first :
+>
+> 1. Install gvm
+>
+>     `curl -s get.gvmtool.net | bash`
+>
+> 2. Install lazybones via gvm
+>
+>     `gvm install lazybones`
 
 
 ## Installing Templates via source

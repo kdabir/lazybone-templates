@@ -1,0 +1,1 @@
+scmExclusions ".sass-cache", ".DS_Store", "*~", ".idea"
