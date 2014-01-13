@@ -7,7 +7,6 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 * [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
 * [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
-* [Gaelyk Minimal](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk-minimal/README.md)
 * [Gaelyk](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk/README.md)
 
 ## Usage
