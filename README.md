@@ -1,37 +1,77 @@
-My Lazybones templates
+My Lazybones Templates
 ----------------------
 
-This repository hosts some project Templates (boilerplate setup) that can be used using Lazybones.
+This repository hosts some project Templates (boilerplate setup) that can be used using [Lazybones].
 
-#### Currently available template(s)
+#### Currently available project template(s)
 
-* [Groovy Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib/README.md)
-* [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee/README.md)
-* [Gaelyk](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk/README.md)
+* [Gaelyk Template](#creating-a-gaelyk-project-using-the-template)
+* [Groovy Lib Template](#creating-a-groovy-library-using-the-template)
+* [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee)
 
 ## Usage
 
-1. Add following snippet to `~/.lazybones/config.groovy`
+1. Add following snippet to `~/.lazybones/config.groovy` (If this file doesn't exist, create it)
 
-        bintrayRepositories = [
-              "pledbrook/lazybones-templates",
-              "kdabir/templates"
-        ]
+```groovy
+bintrayRepositories = [
+      "pledbrook/lazybones-templates",
+      "kdabir/templates"
+]
+```
 
 2. Do a `lazybones list` to see available templates
 
 3. Create an app from template (use `--with-git`)
     `lazybones create <template-name> <version> <dir-name> --with-git`
 
-> Note: If you don't have lazybones installed, install that first :
+> Note: If you don't have [lazybones] installed, install that first :
 >
-> 1. Install gvm
+> 1. Install gvm `curl -s get.gvmtool.net | bash`
 >
->     `curl -s get.gvmtool.net | bash`
->
-> 2. Install lazybones via gvm
->
->     `gvm install lazybones`
+> 2. Install lazybones via gvm `gvm install lazybones`
+
+
+### Creating a Gaelyk Project using the template
+
+* Enter the following command:
+
+        $ lazybones create gaelyk 2.0.1 my-gaelyk-project --with-git
+
+* You will be asked few questions, answering those is optional. If you don't provide any input, the default value in the square brackets `[ ]` will be used.
+
+        Creating project from template gaelyk 2.0.1 in 'my-gaelyk-project'
+        Define value for'app_id' [gaelyk-app]: my-awesome-app
+        Define value for 'app_version' [1]:
+        Define value for 'gae_version' [1.8.8]:
+
+* That's it. From the newly created directory:
+
+        $ cd my-gaelyk-projet
+
+* You can now run your [gaelyk] app locally:
+
+        $ ./gradlew gaeRun
+
+* and test it at `http://localhost:8080`
+
+[More Details](https://github.com/kdabir/lazybone-templates/blob/master/templates/gaelyk)
+
+### Creating a Groovy Library using the template
+
+* Enter the following command
+
+        $ lazybones create groovy-lib 0.2 my-lib-project --with-git                                                                                                                          10:31PM
+
+* You have option to provide `group` and `version`. If you don't provide any input, the default value in the square brackets `[ ]` will be used.
+
+        Creating project from template groovy-lib 0.2 in 'my-lib-project'
+        Define value for 'group' [org.example]: com.mycompany
+        Define value for 'version' [0.1]:
+
+* Your project is ready in the `my-lib-project` with gradle wrapper in it.
+
+[More details](https://github.com/kdabir/lazybone-templates/blob/master/templates/groovy-lib)
 
 
 ## Installing Templates via source
@@ -47,7 +87,6 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 
         ./gradlew installAllTemplates
 
-
 * Test the locally installed template using
 
         lazybones create groovy-lib 0.1 sample-app
@@ -58,7 +97,7 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
         ./gradlew publishTemplateGroovyLib
         ./gradlew publishTemplateSinatraHamlSassCoffee
 
-* To Publish all templates
+* To publish all templates
 
         ./gradlew publishAllTemplates
 
@@ -74,6 +113,9 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 * Publish using `publishTemplate<TemplateName>`
 
 
-You can find out more about creating templates on [Lazybones' GitHub wiki][1].
+You can find out more about creating templates on [Lazybones' GitHub wiki][template-dev-guide].
 
-[1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide
+
+[template-dev-guide]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide           "Template Developer Guide"
+[lazybones]: https://github.com/pledbrook/lazybones                                                   "Lazybones Home"
+[gaelyk]: http://gaelyk.appspot.com                                                                   "Gaelyk"
