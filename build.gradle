@@ -5,10 +5,15 @@ buildscript {
         maven {
             url "http://dl.bintray.com/pledbrook/plugins"
         }
+        maven {
+            url "http://dl.bintray.com/kdabir/maven"
+        }
+        jcenter()
     }
 
     dependencies {
         classpath "uk.co.cacoethes:lazybones-gradle:1.0.2"
+        classpath "directree:directree:0.1"
     }
 }
 
@@ -22,4 +27,16 @@ lazybones {
 
 task wrapper(type: Wrapper) {
     gradleVersion = "1.10"
+}
+
+task createTemplate << {
+    ant.input(message: 'Enter the template dir name: ', addproperty: 'templateDirName')
+
+    def tree = directree.DirTree.create("${project.projectDir}/templates/${ant.templateDirName}") {
+        file "README.md", "# ${ant.templateDirName}"
+        file "VERSION", "0.1"
+        file "lazybones.groovy", """scmExclusions ".DS_Store", "*~" """
+    }
+
+    println "created at " + tree.baseDir
 }

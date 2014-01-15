@@ -104,10 +104,12 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 
 ### To Create a New Template
 
-* Create a new dir in `templates` dir
-* Populate it with template content
-* Add `README.md`
-* Add `VERSION file`
+* execute `./gradlew createTemplate`, which will ask you to enter the directory name (give a hyphenated-one and not TitleCase)
+    * It creates a new dir in `templates` dir
+    * adds `README.md` with header
+    * adds `VERSION file` with 0.1 version
+    * and adds `lazybones.groovy` Post processor
+* Populate it (the generate dir) with template content,
 * Install locally using `installTemplate<TemplateName>`
 * Test locally using `lazybones create template-name <version> sample-app`
 * Publish using `publishTemplate<TemplateName>`
