@@ -15,12 +15,12 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 1. Add following snippet to `~/.lazybones/config.groovy` (If this dir/file doesn't exist, create it)
 
-```groovy
-bintrayRepositories = [
-      "pledbrook/lazybones-templates",
-      "kdabir/templates"
-]
-```
+      ```groovy
+      bintrayRepositories = [
+            "pledbrook/lazybones-templates",
+            "kdabir/templates"
+      ]
+      ```
 
 2. Do a `lazybones list` to see available templates
 
