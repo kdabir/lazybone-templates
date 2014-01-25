@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+group = "${group}"
+version = "${version}"
+
+mainClassName="${group}.Main" // Change it to your main class
+
+repositories { mavenCentral() }
+
+dependencies {
+    testCompile 'junit:junit:4.10'
+}
+
+sourceSets {
+    main.java.srcDir 'src'
+    test.java.srcDir 'test'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
+
+idea {
+    module {
+        excludeDirs += [file(".gradle"), file('gradle')]
+    }
+}

@@ -1,0 +1,71 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = "${group}"
+version = "${version}"
+
+repositories { mavenCentral() }
+
+dependencies {
+    testCompile 'junit:junit:4.10'
+}
+
+sourceSets {
+    main.java.srcDir 'src'
+    test.java.srcDir 'test'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
+
+idea {
+    module {
+        excludeDirs += [file(".gradle"), file('gradle')]
+    }
+}
+
+
+// code below this can be safely removed if you don't want publish library ever
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
+    }
+}
+
+apply plugin: 'maven-publish'
+apply plugin: 'bintray'
+
+publishing {
+    publications {
+        javaMaven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+// set bintrayUser & bintrayKey in gradle.properties
+bintray {
+
+    user = getPropertyOrUseDefault("bintrayUser", "fake_user")
+    key = getPropertyOrUseDefault("bintrayKey", "fake_key")
+    publications = ['javaMaven']
+
+    def projectName = project.name
+    def projectDescription = project.description
+
+    pkg {
+        repo = 'maven' // or your repo name
+        name = projectName      // somehow project.* doesn't work in this closure
+        desc = projectDescription
+        licenses = ['Apache-2.0']
+    }
+    dryRun = true // whether to run this as dry-run, without deploying
+}
+
+String getPropertyOrUseDefault(String propertyName, String defaultValue) {
+    hasProperty(propertyName) ? getProperty(propertyName) : defaultValue
+}

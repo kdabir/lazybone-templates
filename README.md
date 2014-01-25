@@ -7,11 +7,13 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 * [Gaelyk Template](#creating-a-gaelyk-project-using-the-template)
 * [Groovy Lib Template](#creating-a-groovy-library-using-the-template)
+* [Java Lib Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/java-lib)
+* [Java App Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/java-app)
 * [Sinatra Haml Sass & Coffee Template](https://github.com/kdabir/lazybone-templates/blob/master/templates/sinatra-haml-sass-coffee)
 
 ## Usage
 
-1. Add following snippet to `~/.lazybones/config.groovy` (If this file doesn't exist, create it)
+1. Add following snippet to `~/.lazybones/config.groovy` (If this dir/file doesn't exist, create it)
 
 ```groovy
 bintrayRepositories = [
@@ -104,11 +106,14 @@ Clone this Github repo and execute the following Gradle tasks based on what you 
 
 ### To Create a New Template
 
-* execute `./gradlew createTemplate`, which will ask you to enter the directory name (give a hyphenated-one and not TitleCase)
+* execute `TERM=dumb ./gradlew createTemplate`, OR execute `TERM=dumb ./gradlew createGradleProjectTemplate`,
+    which will ask you to enter the directory/project name (give a hyphenated-one and not TitleCase)
     * It creates a new dir in `templates` dir
     * adds `README.md` with header
     * adds `VERSION file` with 0.1 version
     * and adds `lazybones.groovy` Post processor
+    * if creating Gradle project, creates a `build.gradle`
+
 * Populate it (the generate dir) with template content,
 * Install locally using `installTemplate<TemplateName>`
 * Test locally using `lazybones create template-name <version> sample-app`

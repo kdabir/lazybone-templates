@@ -32,11 +32,72 @@ task wrapper(type: Wrapper) {
 task createTemplate << {
     ant.input(message: 'Enter the template dir name: ', addproperty: 'templateDirName')
 
+    if (!ant.templateProjectName) return
+
     def tree = directree.DirTree.create("${project.projectDir}/templates/${ant.templateDirName}") {
         file "README.md", "# ${ant.templateDirName}"
         file "VERSION", "0.1"
         file "lazybones.groovy", """scmExclusions ".DS_Store", "*~" """
     }
 
-    println "created at " + tree.baseDir
+    println "Template created at " + tree.baseDir
+}
+
+
+def exclusions = [".DS_Store", "*~", ".idea", "*.iml", "*.iws", "*.ipr", ".project", ".metadata", ".classpath",
+        ".settings/", ".loadpath", ".gradle", ".gradletasknamecache", "/build", "/bin", "/tmp", "/out",
+        "*.class", "*.tmp", "*.bak", "*.swp", "*~.nib", "*.jar", "*.war", "*.ear"].collect { /"$it"/ }.join(", ")
+
+task createGradleProjectTemplate << {
+    ant.input(message: 'Enter Gradle based template project name: ', addproperty: 'templateProjectName')
+
+    if (!ant.templateProjectName) return
+
+    def tree = directree.DirTree.create("${project.projectDir}/templates/${ant.templateProjectName}") {
+        file "README.md", "# ${ant.templateProjectName} Template"
+
+        file "VERSION", "0.1"
+
+        file ("lazybones.groovy"){
+            """
+            |def props = [:]
+            |props.group = ask("Define value for 'group' [org.example]: ", "org.example", "group")
+            |props.version = ask("Define value for 'version' [0.1]: ", "0.1", "version")
+            |
+            |processTemplates "build.gradle", props
+            |scmExclusions $exclusions
+            |
+            """.stripMargin()
+        }
+
+        file("build.gradle") {
+            """
+            |apply plugin: 'java'
+            |apply plugin: 'idea'
+            |apply plugin: 'groovy'
+            |
+            |group = "\${group}"
+            |version = "\${version}"
+            |
+            |repositories { mavenCentral() }
+            |
+            |dependencies {
+            |    compile 'org.codehaus.groovy:groovy-all:2.2.1'
+            |    testCompile 'junit:junit:4.10'
+            |}
+            |
+            |task wrapper(type: Wrapper) {
+            |    gradleVersion = '1.10'
+            |}
+            |
+            |idea {
+            |    module {
+            |        excludeDirs += [file(".gradle"), file('gradle')]
+            |    }
+            |}
+            """.stripMargin()
+        }
+    }
+
+    println "Template created at " + tree.baseDir
 }
