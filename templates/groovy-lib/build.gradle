@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'idea'
 
 group = "${group}"
 version = "${version}"
@@ -20,6 +21,12 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.10'
+}
+
+idea {
+    module {
+        excludeDirs += [file(".gradle"), file('gradle')]
+    }
 }
 
 // code below this can be safely removed if you don't want publish library ever

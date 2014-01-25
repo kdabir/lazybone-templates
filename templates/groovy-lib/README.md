@@ -8,6 +8,7 @@ What all has been already taken care for you:
 * A boilerplate `build.gradle`
 * Simpler directory structure
 * Gradle wrapper included - No gradle installation required and great for CI servers too
+* Easily generate IntelliJ Idea project files with `./gradlew idea`
 * Travis CI integration ready (a smart `.travis.yml` included)
 * Bintray maven publish integration for your library (.jar)
 * Comprehensive `.gitignore` - so that unnecessary files don't get checked in
