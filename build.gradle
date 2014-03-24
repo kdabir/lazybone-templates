@@ -2,18 +2,13 @@ apply plugin: 'idea'
 
 buildscript {
     repositories {
-        maven {
-            url "http://dl.bintray.com/pledbrook/plugins"
-        }
-        maven {
-            url "http://dl.bintray.com/kdabir/maven"
-        }
+        maven { url "http://dl.bintray.com/pledbrook/plugins" }
         jcenter()
     }
 
     dependencies {
         classpath "uk.co.cacoethes:lazybones-gradle:1.0.2"
-        classpath "directree:directree:0.1"
+        classpath "io.github.kdabir.directree:directree:0.2"
     }
 }
 
@@ -26,7 +21,7 @@ lazybones {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "1.10"
+    gradleVersion = "1.11"
 }
 
 task createTemplate << {

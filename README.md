@@ -38,14 +38,14 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 * Enter the following command:
 
-        $ lazybones create gaelyk 2.0.1 my-gaelyk-project --with-git
+        $ lazybones create gaelyk 2.1.0 my-gaelyk-project --with-git
 
 * You will be asked few questions, answering those is optional. If you don't provide any input, the default value in the square brackets `[ ]` will be used.
 
-        Creating project from template gaelyk 2.0.1 in 'my-gaelyk-project'
-        Define value for'app_id' [gaelyk-app]: my-awesome-app
-        Define value for 'app_version' [1]:
-        Define value for 'gae_version' [1.8.8]:
+        Creating project from template gaelyk 2.1.0 in 'my-gaelyk-project'
+        Enter application id [gaelyk-app]: my-awesome-app
+        Enter application version [1]:
+        Enter Google App Engine version [1.9.1]:
 
 * That's it. From the newly created directory:
 
