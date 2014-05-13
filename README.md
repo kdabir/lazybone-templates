@@ -53,7 +53,7 @@ This repository hosts some project Templates (boilerplate setup) that can be use
 
 * You can now run your [gaelyk] app locally:
 
-        $ ./gradlew gaeRun
+        $ ./gradlew appengineRun
 
 * and test it at `http://localhost:8080`
 

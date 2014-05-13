@@ -13,7 +13,7 @@ def props = [:]
 
 props.app_id = ask("Enter application id [gaelyk-app]: ", "gaelyk-app", "app_id")
 props.app_version = ask("Enter application version [1]: ", "1", "app_version")
-props.gae_version = ask("Enter Google App Engine version [1.9.1]: ", "1.9.1", "gae_version")
+props.gae_version = ask("Enter Google App Engine version [1.9.4]: ", "1.9.4", "gae_version")
 
 processTemplates "src/main/webapp/WEB-INF/appengine-web.xml", props
 processTemplates "build.gradle", props
