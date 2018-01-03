@@ -5,6 +5,9 @@
 
     <!-- Enable concurrent requests by default to serve requests in parallel -->
     <threadsafe>true</threadsafe>
+    
+    <!-- Deploy on the modern Java 8 runtime -->
+    <runtime>java8</runtime>
 
     <!-- If all your templates and groovlets are encoding in UTF-8 -->
     <!-- Please specify the settings below, otherwise weird characters may appear in your templates -->
