@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     def gaeVersion = '{{gae_version}}'
-    def groovyVersion = '2.3.0'
+    def groovyVersion = '2.4.13'
 
     compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
