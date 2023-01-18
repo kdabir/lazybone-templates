@@ -8,7 +8,7 @@ GEM
     execjs (2.0.2)
     haml (4.0.4)
       tilt
-    rack (1.5.2)
+    rack (1.6.13)
     rack-protection (1.5.1)
       rack
     sass (3.2.13)
